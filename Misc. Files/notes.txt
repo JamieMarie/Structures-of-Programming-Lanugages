@@ -1,0 +1,33 @@
+Languages to know: 
+-C
+-cobol
+-algol
+-plainkalkul
+-modula
+-smalltalk 
+
+change .flex file into .lex
+pipe in file
+	./a.out < <filename>
+
+#define	JEDI	243
+%token JEDI --> first section of bison file 
+bison -d --> creates a sw.tab.h --> must be included in flexing file 
+%{
+%}
+%token <strVal> JEDI 
+%%
+	CF6
+%%
+code
+
+luke|rey..etc.			{ yylval.str yytext; return JEDI; }
+42				{ yylval.intr = atoi(yytext); return MEANING; }
+in bison file you just ask for the value
+you define the yylval union in the bison file using syntax 
+%union{
+	int intval;
+	double val;
+	symrec *tptr;
+}
+
