@@ -56,7 +56,7 @@ circle:	CIRCLE
 setcolor:	SET_COLOR 
 	INT INT INT END_STATEMENT
 	/*	if(($2 > 255) || ($3 > 255) || ($4 > 255)) {
-       printf("INvalid: Exceeded color limit");
+       printf("no");
     } */
 	;
 
