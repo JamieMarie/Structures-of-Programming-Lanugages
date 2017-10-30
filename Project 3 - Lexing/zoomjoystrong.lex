@@ -5,19 +5,20 @@
 int ival;
 float fval;
 void yyerror(char*);
+int fileno(FILE *stream);
 
 %}
 
 %option no yywrap
 
 %%
-END 			{ return END; }
+end 			{ return END; }
 ;				{ return END_STATEMENT; }
-POINT			{ return POINT; }
-LINE			{ return LINE; }
-CIRCLE			{ return CIRCLE; }
-RECTANGLE		{ return RECTANGLE; }
-SET_COLOR		{ return SET_COLOR; }
+point			{ return POINT; }
+line			{ return LINE; }
+circle			{ return CIRCLE; }
+rectangle		{ return RECTANGLE; }
+set_color		{ return SET_COLOR; }
 [0-9]+			{ 
 					yylval.ival = atoi(yytext); 
 					return INT; 
