@@ -42,11 +42,11 @@ statement:	point
 	| rectangle
 	;
 
-point:	POINT INT INT END_STATEMENT 
+point: POINT INT INT END_STATEMENT 
 	{ point( $2, $3 ); }
 	;
 
-line:	LINE INT INT INT INT END_STATEMENT 
+line: LINE INT INT INT INT END_STATEMENT 
 	{ line( $2, $3, $4, $5 ); }
 	;
 
@@ -54,7 +54,7 @@ circle:	CIRCLE INT INT INT END_STATEMENT
 	{ circle( $2, $3, $4 ); }
 	;
 
-setcolor:	SET_COLOR INT INT INT END_STATEMENT 
+setcolor: SET_COLOR INT INT INT END_STATEMENT 
 	{ set_color( $2, $3, $4 ); }
 	;
 
@@ -78,3 +78,5 @@ int yyerror (char *s){
 int yywrap(){
 	return 1;
 }
+
+void check
